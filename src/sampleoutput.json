@@ -1,10 +1,7 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import NewsItem from './NewsItem'
-// news item is in news component
-export class News extends Component {
- 
-  articles= [
+{
+  "status": "success",
+  "totalResults": 2737,
+  "results": [
     {
       "article_id": "24cfce12dff4074af94f8978b6903a5c",
       "link": "https://menafn.com/1110523680/Sachin-Tendulkar-20-Shashi-Tharoor-Urges-BCCI-To-Call-Up-Teen-Prodigy-Vaibhav-Suryvanshi",
@@ -441,33 +438,6 @@ export class News extends Component {
       "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
       "duplicate": true
     }
-  ]
-
-  constructor() {
-    super();
-    console.log("Hello I am a constructor from News component");
-    this.state={
-      articles: this.articles,
-      loading: false
-    }
-  }
-    render() {
-    return (
-    <div className="container my-3 ">
-         <h2>Daily News Top Headlines</h2>
-       <div className="row">
-         
-         
-          {this.state.articles.map((element)=>{
-            return <div className="col-md-4" key={element.url}>
-            <NewsItem title={element.title.slice(0,45)} description={element.description.slice(0,88)} imgurl={element.image_url} newsUrl={element.link}/>
-             </div>
-          })}
-         
-        </div>
-    </div>
-    )
-  }
+  ],
+  "nextPage": "1766624266479320801"
 }
-
-export default News
