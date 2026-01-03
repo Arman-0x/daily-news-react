@@ -50,7 +50,7 @@ export class News extends Component {
         {this.state.loading && <Spinner />}
 
         <div className="row">
-          {this.state.articles.map((element) => (
+           {!this.state.loading&&this.state.articles.map((element) => (
             <div className="col-md-4 d-flex" key={element.link}>
               <NewsItem
                 title={element.title ? element.title.slice(0, 45) : ""}
