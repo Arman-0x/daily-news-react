@@ -1,8 +1,20 @@
 import React, { Component } from 'react'
 import NewsItem from './NewsItem'
 import Spinner from './Spinner'
+import PropTypes from 'prop-types'
 
 export class News extends Component {
+  static defaultProps = {
+    country: "in",
+    size: 8,
+    category: "general"
+  }
+
+  static propTypes = {
+    country: PropTypes.string,
+    size: PropTypes.number,
+    category: PropTypes.string
+  }
 
   constructor() {
     super();
@@ -15,7 +27,7 @@ export class News extends Component {
 
   async fetchNews() {
     this.setState({ loading: true });
-    let url = `https://newsdata.io/api/1/latest?apikey=pub_8c7cf993596149b79408d3974974907b&language=en,hi,mr&size=${this.props.size}`;
+    let url = `https://newsdata.io/api/1/latest?apikey=pub_8c7cf993596149b79408d3974974907b&category=${this.props.category}&country=${this.props.country}&language=en,hi,mr&size=${this.props.size}`;
 
     if (this.state.nextPage) {
       url += `&page=${this.state.nextPage}`;
@@ -26,8 +38,8 @@ export class News extends Component {
       
 
     this.setState({
-      articles: parsedData.results,
-      nextPage: parsedData.nextPage,
+      articles: Array.isArray(parsedData.results) ? parsedData.results : [],
+      nextPage: parsedData.nextPage || null,
       loading: false
     });
 
@@ -46,23 +58,27 @@ export class News extends Component {
   render() {
     return (
       <div className="container my-3">
-        <h1 className="text-center">Daily News Top Headlines</h1>
+        <h1 className="text-center" style={{color:"purple", margin:"35px 0px"}}>Daily News Top Headlines</h1>
         {this.state.loading && <Spinner />}
 
-        <div className="row">
-           {!this.state.loading&&this.state.articles.map((element) => (
-            <div className="col-md-4 d-flex" key={element.link}>
-              <NewsItem
-                title={element.title ? element.title.slice(0, 45) : ""}
-                description={element.description ? element.description.slice(0, 88) : ""}
-                imgurl={element.image_url}
-                newsUrl={element.link}
-              />
-            </div>
-          ))}
-        </div>
+        <div className="row justify-content-center text-center">
+  {!this.state.loading &&
+    this.state.articles.map((element) => (
+      <div
+        className="col-12 col-md-4 d-flex justify-content-center mb-4"
+        key={element.link}
+      >
+        <NewsItem
+          title={element.title ? element.title.slice(0, 45) : ""}
+          description={element.description ? element.description.slice(0, 88) : ""}
+          imgurl={element.image_url}
+          newsUrl={element.link}
+        />
+      </div>
+    ))}
+</div>
 
-        <div className="container d-flex justify-content-end mt-3">
+        <div className="container d-flex justify-content-center mb-4" style={{marginBottom:"20px"}}>
           <button
             type="button"
             className="btn btn-dark"
