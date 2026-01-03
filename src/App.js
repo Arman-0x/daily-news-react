@@ -3,12 +3,13 @@ import React, { Component } from 'react'
 import Navbar from './components/Navbar';
 import News from './components/News';
 export default class App extends Component {
-   c='i am a variable from app.js';
+
+
   render() {
     return (
       <div>
        <Navbar/>
-       <News/>
+       <News size={5}/>
       </div>
     )
   }

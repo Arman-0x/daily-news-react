@@ -1,473 +1,80 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import NewsItem from './NewsItem'
-// news item is in news component
+import Spinner from './Spinner'
+
 export class News extends Component {
- 
-  articles= [
-    {
-      "article_id": "24cfce12dff4074af94f8978b6903a5c",
-      "link": "https://menafn.com/1110523680/Sachin-Tendulkar-20-Shashi-Tharoor-Urges-BCCI-To-Call-Up-Teen-Prodigy-Vaibhav-Suryvanshi",
-      "title": "Sachin Tendulkar 2.0? Shashi Tharoor Urges BCCI To Call Up Teen Prodigy Vaibhav Suryvanshi",
-      "description": "(MENAFN - AsiaNet News) Congress MP Shashi Tharoor has compared Vaibhav Suryvanshi's talent to that of legendary Indian cricketer Sachin Tendulkar. Tharoor has urged the Board of Control for Cricket ...",
-      "content": "ONLY AVAILABLE IN PAID PLANS",
-      "keywords": null,
-      "creator": [
-        "marketing@menafn.com (menafn)"
-      ],
-      "language": "english",
-      "country": [
-        "georgia",
-        "yemen",
-        "afghanistan",
-        "cyprus",
-        "india",
-        "singapore",
-        "saudi arabia",
-        "maldives",
-        "japan",
-        "united arab emirates",
-        "malaysia",
-        "china",
-        "south korea",
-        "north korea",
-        "taiwan",
-        "thailand",
-        "pakistan",
-        "mongolia",
-        "brunei",
-        "lebanon",
-        "indonesia",
-        "kyrgyzstan",
-        "syria",
-        "israel",
-        "bhutan",
-        "iran",
-        "turkey",
-        "armenia",
-        "qatar",
-        "philippines",
-        "kazakhstan",
-        "iraq",
-        "bangladesh",
-        "laos",
-        "vietnam",
-        "timor-leste",
-        "kuwait",
-        "myanmar",
-        "azerbaijan",
-        "jordan",
-        "nepal",
-        "sri lanka",
-        "uzbekistan",
-        "turkmenistan",
-        "macau",
-        "bahrain",
-        "cambodia",
-        "tajikistan"
-      ],
-      "category": [
-        "top",
-        "entertainment"
-      ],
-      "datatype": "news",
-      "pubDate": "2025-12-25 01:07:31",
-      "pubDateTZ": "UTC",
-      "fetched_at": "2025-12-25 08:12:40",
-      "image_url": "https://menafn.com/updates/pr/2025-12/25/AN_2f6e7image_story.jpeg",
-      "video_url": null,
-      "source_id": "menafn",
-      "source_name": "Menafn",
-      "source_priority": 28392,
-      "source_url": "https://menafn.com",
-      "source_icon": "https://n.bytvi.com/menafn.png",
-      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
-      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
-      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
-      "duplicate": false
-    },
-    {
-      "article_id": "f9455856627099b4a338f486bddaa7b1",
-      "link": "https://www.indiatvnews.com/sports/cricket/boxing-day-test-2025-history-significance-and-what-is-at-stake-at-mcg-2025-12-25-1023201",
-      "title": "Boxing Day Test 2025: History, significance and what is at stake at MCG?",
-      "description": "Boxing Day is a public holiday observed on December 26 in several Commonwealth nations, including Australia, England, New Zealand and South Africa. The term originates from 17th-century Britain, where “Christmas boxes” containing money or goods were given to the unfortunates on the day after Christmas. Over time, Boxing Day evolved into a nationally recognised holiday, allowing for public gatherings and large sporting events. In Australia, this alignment between a day off and mass attendance helped establish the Boxing Day Test as a permanent fixture in the cricket calendar.",
-      "content": "ONLY AVAILABLE IN PAID PLANS",
-      "keywords": null,
-      "creator": null,
-      "language": "english",
-      "country": [
-        "india"
-      ],
-      "category": [
-        "sports"
-      ],
-      "datatype": "news",
-      "pubDate": "2025-12-25 01:05:34",
-      "pubDateTZ": "UTC",
-      "fetched_at": "2025-12-25 01:35:39",
-      "image_url": "https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2025/12/untitled-design-2025-12-25t063539-1766624720.jpg",
-      "video_url": null,
-      "source_id": "indiatvnews",
-      "source_name": "India Tv",
-      "source_priority": 10055,
-      "source_url": "https://www.indiatvnews.com",
-      "source_icon": "https://n.bytvi.com/indiatvnews.png",
-      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
-      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
-      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
-      "duplicate": false
-    },
-    {
-      "article_id": "831e6bcd2b8b41526544f800da3f6d50",
-      "link": "https://www.perthnow.com.au/sport/sailing/meet-the-sydney-to-hobarts-most-beautiful-yacht-c-21113732",
-      "title": "Meet the Sydney to Hobart's 'most beautiful' yacht",
-      "description": "With beautiful mahogany finishes, a huge sail area and double cockpit, Oroton Drumfire might just be the prettiest yacht in the Sydney to Hobart fleet.",
-      "content": "ONLY AVAILABLE IN PAID PLANS",
-      "keywords": [
-        "sailing",
-        "sport"
-      ],
-      "creator": [
-        "jasper bruce"
-      ],
-      "language": "english",
-      "country": [
-        "australia"
-      ],
-      "category": [
-        "breaking"
-      ],
-      "datatype": "news",
-      "pubDate": "2025-12-25 01:04:56",
-      "pubDateTZ": "UTC",
-      "fetched_at": "2025-12-25 01:10:05",
-      "image_url": "https://images.perthnow.com.au/publication/C-21113732/64cafaa1019627b825ed6edf237920cffb0bd1c8-16x9-x0y0w1280h720.jpg",
-      "video_url": null,
-      "source_id": "perthnow",
-      "source_name": "Perthnow",
-      "source_priority": 49457,
-      "source_url": "https://www.perthnow.com.au",
-      "source_icon": "https://n.bytvi.com/perthnow.png",
-      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
-      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
-      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
-      "duplicate": false
-    },
-    {
-      "article_id": "e1dcdf9db299a253ca4a8d405d440324",
-      "link": "https://thewest.com.au/sport/sailing/meet-the-sydney-to-hobarts-most-beautiful-yacht-c-21113724",
-      "title": "Meet the Sydney to Hobart's 'most beautiful' yacht",
-      "description": "With beautiful mahogany finishes, a huge sail area and double cockpit, Oroton Drumfire might just be the prettiest yacht in the Sydney to Hobart fleet.",
-      "content": "ONLY AVAILABLE IN PAID PLANS",
-      "keywords": [
-        "premium",
-        "sailing",
-        "sport"
-      ],
-      "creator": [
-        "jasper bruce"
-      ],
-      "language": "english",
-      "country": [
-        "australia"
-      ],
-      "category": [
-        "sports",
-        "top"
-      ],
-      "datatype": "news",
-      "pubDate": "2025-12-25 01:04:31",
-      "pubDateTZ": "UTC",
-      "fetched_at": "2025-12-25 01:13:44",
-      "image_url": "https://images.thewest.com.au/publication/C-21113724/64cafaa1019627b825ed6edf237920cffb0bd1c8-16x9-x0y0w1280h720.jpg",
-      "video_url": null,
-      "source_id": "thewest",
-      "source_name": "The West",
-      "source_priority": 106740,
-      "source_url": "https://thewest.com.au",
-      "source_icon": "https://n.bytvi.com/thewest.png",
-      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
-      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
-      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
-      "duplicate": true
-    },
-    {
-      "article_id": "b041a39284ce7852d94e8a641a571b9d",
-      "link": "https://risingnepaldaily.com/news/73078",
-      "title": "Minister Ghising unveils 100-day progress report",
-      "description": "Kathmandu, Dec. 25: Minister for Energy, Water Resources and Irrigation Kul Man Ghising has made public a list of works...",
-      "content": "ONLY AVAILABLE IN PAID PLANS",
-      "keywords": null,
-      "creator": [
-        "laxman kafle"
-      ],
-      "language": "english",
-      "country": [
-        "nepal"
-      ],
-      "category": [
-        "top",
-        "business"
-      ],
-      "datatype": "news",
-      "pubDate": "2025-12-25 01:04:17",
-      "pubDateTZ": "UTC",
-      "fetched_at": "2025-12-25 01:22:04",
-      "image_url": "https://risingnepaldaily.com/storage/media/93161/download-(1)-(1).jpg",
-      "video_url": null,
-      "source_id": "risingnepaldaily",
-      "source_name": "The Rising Nepal",
-      "source_priority": 775627,
-      "source_url": "https://risingnepaldaily.com",
-      "source_icon": "https://n.bytvi.com/risingnepaldaily.png",
-      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
-      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
-      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
-      "duplicate": false
-    },
-    {
-      "article_id": "40650d433d1b75ea745cabdcc84d76f7",
-      "link": "https://www.livehindustan.com/cricket/karnataka-vijay-hazare-trophy-highest-successful-chase-in-history-vs-jharkhand-devdutt-padikkal-century-ishan-kishan-201766623310994.html",
-      "title": "कर्नाटक का हैरतअंगेज कारनामा, देवदत्त पडिक्कल के दम पर की विजय हजारे ट्रॉफी के इतिहास की सबसे बड़ी रनचेज",
-      "description": "कर्नाटक की क्रिकेट टीम ने उस समय हर किसी का ध्यान अपनी ओर खींचा, जब उन्होंने झारखंड के खिलाफ विजय हजारे ट्रॉफी के इतिहास की सबसे बड़ी रनचेज की। पहली बार कोई टीम सफल रनचेज में 400 का आंकड़ा पार कर पाई है।",
-      "content": "ONLY AVAILABLE IN PAID PLANS",
-      "keywords": [
-        "cricket"
-      ],
-      "creator": [
-        "live_hindustan"
-      ],
-      "language": "hindi",
-      "country": [
-        "india"
-      ],
-      "category": [
-        "sports"
-      ],
-      "datatype": "news",
-      "pubDate": "2025-12-25 01:04:14",
-      "pubDateTZ": "UTC",
-      "fetched_at": "2025-12-25 01:14:38",
-      "image_url": "https://www.livehindustan.com/lh-img/smart/img/2025/12/25/1200x900/MixCollage-25-Dec-2025-06-32-AM-5075_1766624617743_1766624623407.jpg",
-      "video_url": null,
-      "source_id": "livehindustan",
-      "source_name": "Hindustan",
-      "source_priority": 127332,
-      "source_url": "https://www.livehindustan.com",
-      "source_icon": "https://n.bytvi.com/livehindustan.jpg",
-      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
-      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
-      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
-      "duplicate": false
-    },
-    {
-      "article_id": "8ac551d7fdeab75e796d761e47c38644",
-      "link": "https://www.blayneychronicle.com.au/story/9141769/meet-the-sydney-to-hobarts-most-beautiful-yacht/",
-      "title": "Meet the Sydney to Hobart's 'most beautiful' yacht",
-      "description": "With beautiful mahogany finishes, a huge sail area and double cockpit, Oroton Drumfire might just be the prettiest yacht in the Sydney to Hobart fleet.",
-      "content": "ONLY AVAILABLE IN PAID PLANS",
-      "keywords": [
-        "free",
-        "nsw",
-        "tas",
-        "sport",
-        "domestic-sports"
-      ],
-      "creator": [
-        "jasper bruce"
-      ],
-      "language": "english",
-      "country": [
-        "australia"
-      ],
-      "category": [
-        "sports"
-      ],
-      "datatype": "news",
-      "pubDate": "2025-12-25 01:00:51",
-      "pubDateTZ": "UTC",
-      "fetched_at": "2025-12-25 01:30:32",
-      "image_url": "https://www.blayneychronicle.com.au/images/transform/v1/crop/frm/silverstone-feed-data/2fdc1bc8-e151-4951-b6b8-83bc94bf162f.jpg/r0_0_800_600_w1200_h678_fmax.jpg",
-      "video_url": null,
-      "source_id": "blayneychronicle",
-      "source_name": "Blayney, Nsw",
-      "source_priority": 17177086,
-      "source_url": "https://www.blayneychronicle.com.au",
-      "source_icon": "https://n.bytvi.com/blayneychronicle.png",
-      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
-      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
-      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
-      "duplicate": true
-    },
-    {
-      "article_id": "6328f0cf7af4b527218a875778180621",
-      "link": "https://www.news18.com/cricket/rohit-sharma-reacts-after-fan-asks-him-vada-pav-khaoge-during-mumbais-vijay-hazare-trophy-match-watch-ws-kln-9790999.html",
-      "title": "Rohit Sharma Reacts After Fan Asks Him 'Vada Pav Khaoge' During Mumbai's Vijay Hazare Trophy Match | Watch",
-      "description": "Rohit Sharma scored 155 runs from 94 balls on Wednesday to help Mumbai secure a big win by 8 wickets over Sikkim in the Vijay Hazare Trophy.",
-      "content": "ONLY AVAILABLE IN PAID PLANS",
-      "keywords": [
-        "cricket"
-      ],
-      "creator": [
-        "harshit bisht"
-      ],
-      "language": "english",
-      "country": [
-        "india"
-      ],
-      "category": [
-        "sports"
-      ],
-      "datatype": "news",
-      "pubDate": "2025-12-25 00:58:17",
-      "pubDateTZ": "UTC",
-      "fetched_at": "2025-12-25 01:02:15",
-      "image_url": "https://images.news18.com/ibnlive/uploads/2025/12/Rohit-Sharma-reacts-after-fan-offers-him-vada-pav-during-Mumbais-Vijay-Hazare-Trophy-opener-in-Jaipur-2025-12-d8a0ba4ddd12a5fc2ea716ff772daea0-3x2.jpg",
-      "video_url": null,
-      "source_id": "news18",
-      "source_name": "News 18",
-      "source_priority": 1063,
-      "source_url": "https://www.news18.com",
-      "source_icon": "https://n.bytvi.com/news18.png",
-      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
-      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
-      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
-      "duplicate": false
-    },
-    {
-      "article_id": "95489aae03903054715a6c1144d9d5a0",
-      "link": "https://www.lokmat.com/cricket/news/records-after-records-in-the-vijay-hazare-tournament-two-and-a-half-centuries-two-explosive-centuries-in-a-single-day-a-a607/",
-      "title": "विजय हजारे स्पर्धेत विक्रमच विक्रम, एकाच दिवसात दोन दीड शतके, दोन स्फोटक शतके...",
-      "description": "Records after records in the Vijay Hazare Tournament, two and a half centuries, two explosive centuries in a single day... - वैभव सूर्यवंशी व बिहारचा कर्णधार साकिबुल गनी यांनी स्फोटक शतके झळकावली. - Latest Marathi News (मराठी बातम्या). Find Breaking Headlines, Current and Latest cricket news in Marathi at Lokmat.com",
-      "content": "ONLY AVAILABLE IN PAID PLANS",
-      "keywords": [
-        "virat kohli",
-        "विजय हजारे करंडक",
-        "vijay hazare trophy",
-        "rohit sharma",
-        "विराट कोहली",
-        "रोहित शर्मा"
-      ],
-      "creator": [
-        "ऑनलाइन लोकमत"
-      ],
-      "language": "marathi",
-      "country": [
-        "india"
-      ],
-      "category": [
-        "top",
-        "lifestyle"
-      ],
-      "datatype": "news",
-      "pubDate": "2025-12-25 00:58:14",
-      "pubDateTZ": "UTC",
-      "fetched_at": "2025-12-25 01:04:20",
-      "image_url": "https://d3pc1xvrcw35tl.cloudfront.net/images/686x514/vijay-hajare-trophy-45_2025121610748.jpg",
-      "video_url": null,
-      "source_id": "lokmat",
-      "source_name": "Lokmat",
-      "source_priority": 8448,
-      "source_url": "https://www.lokmat.com",
-      "source_icon": "https://n.bytvi.com/lokmat.jpeg",
-      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
-      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
-      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
-      "duplicate": false
-    },
-    {
-      "article_id": "b3b069be1af8c02dea2322c8951b5bf8",
-      "link": "https://www.nst.com.my/sports/cricket/2025/12/1344105/bihar-rack-574-50-over-game-records-tumble-indian-run-spree",
-      "title": "Bihar rack up 574 in 50-over game as records tumble in Indian run spree",
-      "description": "BIHAR posted the highest score in men’s List A cricket with a staggering 574-6 against Arunachal Pradesh in India’s Vijay Hazare Trophy on Wednesday, led by 14-year-old Vaibhav Suryavanshi’s jaw-dropping knock of 190.",
-      "content": "ONLY AVAILABLE IN PAID PLANS",
-      "keywords": [
-        "cricket"
-      ],
-      "creator": [
-        "reuters"
-      ],
-      "language": "english",
-      "country": [
-        "malaysia"
-      ],
-      "category": [
-        "sports",
-        "top"
-      ],
-      "datatype": "news",
-      "pubDate": "2025-12-25 00:57:46",
-      "pubDateTZ": "UTC",
-      "fetched_at": "2025-12-25 01:15:54",
-      "image_url": "https://assets.nst.com.my/images/listing-featured/670C5CEEE9E2EC42076500AA27F11C05_data_0.jpg",
-      "video_url": null,
-      "source_id": "nst",
-      "source_name": "New Straits Times",
-      "source_priority": 197437,
-      "source_url": "https://www.nst.com.my",
-      "source_icon": "https://n.bytvi.com/nst.png",
-      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
-      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
-      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
-      "duplicate": true
-    }
-  ]
 
   constructor() {
     super();
-    console.log("Hello I am a constructor from News component");
-    this.state={
-      articles: this.articles,
+    this.state = {
+      articles: [],
+      nextPage: null,
       loading: false
-    }
+    };
   }
-    render() {
+
+  async fetchNews() {
+    this.setState({ loading: true });
+    let url = `https://newsdata.io/api/1/latest?apikey=pub_8c7cf993596149b79408d3974974907b&language=en,hi,mr&size=${this.props.size}`;
+
+    if (this.state.nextPage) {
+      url += `&page=${this.state.nextPage}`;
+    }
+
+    let data = await fetch(url);
+    let parsedData = await data.json();
+      
+
+    this.setState({
+      articles: parsedData.results,
+      nextPage: parsedData.nextPage,
+      loading: false
+    });
+
+  }
+
+  componentDidMount() {
+    this.fetchNews();
+  }
+
+  handleNext = () => {
+    if (this.state.nextPage) {
+      this.fetchNews();
+    }
+  };
+
+  render() {
     return (
-    <div className="container my-3 ">
-         <h2>Daily News Top Headlines</h2>
-       <div className="row">
-         
-         
-          {this.state.articles.map((element)=>{
-            return <div className="col-md-4" key={element.url}>
-            <NewsItem title={element.title.slice(0,45)} description={element.description.slice(0,88)} imgurl={element.image_url} newsUrl={element.link}/>
-             </div>
-          })}
-         
+      <div className="container my-3">
+        <h1 className="text-center">Daily News Top Headlines</h1>
+        {this.state.loading && <Spinner />}
+
+        <div className="row">
+          {this.state.articles.map((element) => (
+            <div className="col-md-4 d-flex" key={element.link}>
+              <NewsItem
+                title={element.title ? element.title.slice(0, 45) : ""}
+                description={element.description ? element.description.slice(0, 88) : ""}
+                imgurl={element.image_url}
+                newsUrl={element.link}
+              />
+            </div>
+          ))}
         </div>
-    </div>
-    )
+
+        <div className="container d-flex justify-content-end mt-3">
+          <button
+            type="button"
+            className="btn btn-dark"
+            onClick={this.handleNext}
+            disabled={!this.state.nextPage}
+          >
+            Next &rarr;
+          </button>
+        </div>
+      </div>
+    );
   }
 }
 
-export default News
+export default News;
