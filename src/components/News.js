@@ -61,7 +61,7 @@ export class News extends Component {
         <h1 className="text-center" style={{color:"purple", margin:"35px 0px"}}>Daily News Top Headlines</h1>
         {this.state.loading && <Spinner />}
 
-        <div className="row justify-content-center text-center">
+        <div className="row justify-content-center">
   {!this.state.loading &&
     this.state.articles.map((element) => (
       <div
@@ -78,7 +78,7 @@ export class News extends Component {
     ))}
 </div>
 
-        <div className="container d-flex justify-content-center mb-4" style={{marginBottom:"20px"}}>
+        <div className="container d-flex justify-content-center mb-4" >
           <button
             type="button"
             className="btn btn-dark"
