@@ -72,7 +72,10 @@ export class News extends Component {
           title={element.title ? element.title.slice(0, 45) : ""}
           description={element.description ? element.description.slice(0, 88) : ""}
           imgurl={element.image_url}
-          newsUrl={element.link}
+          newsUrl={element.link} 
+          author={element.source_name}
+          date={new Date(element.pubDate).toGMTString()}
+          source_name={element.source_name}
         />
       </div>
     ))}
